@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MakersBnB - Spaces</title>
+        <link rel="stylesheet" href="/static/style.css" >
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <style>
+            body {
+                background-color: peachpuff;
+                font-size: 18px;
+                font-family: "Lato", sans-serif;
+            }
+            .dashboard-button {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background-color: rgb(251, 172, 103);
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border: none;
+                border-radius: 4px;
+            }
+            .dashboard-button:hover {
+                background-color: peachpuff
+            }
+        </style>
+    </head>
+    <body>
+        <div class = 'header'>
+        <a href="{{ url_for('dashboard') }}" class="dashboard-button">Dashboard</a>
+        <h1> Book a space: </h1>
+        <a href="/spaces/new"><button type=button>List a space</button></a>
+        <br> <br>
+
+        <form>
+            <p>
+                <label for="Available from">Available from</label>
+                <input type="text" name="Available From" id="Available from" >
+
+                <label for="Available to">Available to</label>
+                <input type="text" name="Available To" id="Available to" >
+
+                <button type=button>List Spaces</button>
+            </p>
+        
+        <p>Here you'll see a list of spaces where you can book a property.</p>
+        {% for item, images in test_list %}
+            <a href="/spaces/{{item[5]}}"><button type=button>View This Space</button></a>
+            <img src="{{url_for('static', filename=images)}}" class="img-fluid" class="center" style="width:300px;height:200px">
+            <div>{{item[2]}}: {{item[1]}} - {{item[3]}} <br> £{{item[4]}} <br> listed by {{item[0][0].name}} <br> <br></div>
+        {% endfor %}
+            
+        </div>
+
+  
+
+    
+    </body>
+</html>
+

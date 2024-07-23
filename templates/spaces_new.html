@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MakersBnB - Spaces - New</title>
+        <link rel="stylesheet" href="/static/style.css" >
+        <style>
+            .dashboard-button {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background-color: rgb(251, 172, 103);
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border: none;
+                border-radius: 4px;
+            }
+            .dashboard-button:hover {
+                background-color: peachpuff
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+        <h1>List a Space</h1>
+        <form action="/spaces/new" method="post">
+
+        <a href="{{ url_for('dashboard') }}" class="dashboard-button">Dashboard</a>
+
+
+            <!-- We check to see if there are any errors from a previous submission -->
+            {% if errors %}
+            <!-- If so, we show them. -->
+            <p class="t-errors">
+                There were errors with your submission: {{ errors }}
+            </p>
+            {% endif %}
+            
+            <p>
+            <!-- These `label` tags are important for accessibility -->
+                <label for="Property Name">Property Name</label>
+                <input type="text" name="Property Name" id="property_name" required>
+                <br>
+                <br>
+                <label for="Description">Description</label>
+                <input type="text" name="Description" id="description" required>
+
+                <label for="Location">Location</label>
+                <input type="text" name="Location" id="location" required>
+
+                <label for="Price per Night (£)">Price per Night (£)</label>
+                <input type="number" name="Price per Night (£)" id="price_per_night" required>
+                <br>
+                <br>
+                <label for="Available From (dd-mm-yyyy)">Available From (dd-mm-yyyy)</label>
+                <input type="date" name="Available From (dd-mm-yyyy)" id="available_from" required>
+                <br>
+                <br>
+                <label for="Available To (dd-mm-yyyy)">Available To (dd-mm-yyyy)</label>
+                <input type="date" name="Available To (dd-mm-yyyy)" id="available_to" required>
+
+            </p>
+
+            <p>
+                <input type="submit" value="List My Space">
+            </p>      
+        </form> 
+        </div>    
+    </body>
+</html>

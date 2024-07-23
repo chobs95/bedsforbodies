@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .header {
+            color: #0e3f3a;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            font-family: 'Leto', sans-serif;   
+        }
+        .container {
+            text-align: center;
+        }
+        .link {
+            display: block;
+            margin: 10px 0;
+        }
+        .dashboard-buttons {
+            top: 20px;
+            right: 20px;
+            background-color: rgb(250, 184, 126);
+            font-family: 'Leto', sans-serif;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        .dashboard-buttons:hover {
+            background-color: #b2c6ca;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Beds For Bodies! </h1>
+        <p class="container"><h1>This is your dashboard:</h1></p>
+        <p>User email: {{ session['email'] }}</p>
+        <!-- Add more content here as needed -->
+    <div class="container">
+        <p class="dashboard-buttons"><a href="{{ url_for('get_requests') }}" class="link">Incoming Requests</a></p>
+        <p class="dashboard-buttons"><a href="{{ url_for('create_space') }}" class="link">Create A Property</a></p>
+        <p class="dashboard-buttons"><a href="{{ url_for('get_spaces') }}" class="link">Browse Properties</a></p>
+    </div>    
+        
+</body>
+</html>
+
+

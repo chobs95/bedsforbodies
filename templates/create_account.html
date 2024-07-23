@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MakersBnB - Create</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="utf-8">
+    <style>
+        body{
+            background-color: peachpuff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .header {
+            position: absolute;
+            top: 100px;
+            text-align: center;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;   
+        }
+        .container {
+            text-align: center;
+        }
+        .link {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">    
+        <h1>Create an account</h1>
+        <p>Please enter your email and password</p>
+        <form action='create' method='POST'>
+            <input type='text' name='email' id='email' placeholder='email'/><br><br>
+            <input type='password' name='password' id='password' placeholder='password'/><br><br>
+            <input type='password' name='password_authenticator' id='password_authenticator' placeholder='check password'/><br>
+            <input type='submit' name='submit'/>
+        </form>
+    </div>
+</body>
+</html>

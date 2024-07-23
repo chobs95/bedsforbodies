@@ -1,0 +1,32 @@
+body 
+{
+    background-color: peachpuff;
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+}
+.header {
+    color: #0e3f3a;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-family: 'Leto', sans-serif;   
+}
+.dashboard-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgb(251, 172, 103);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+.dashboard-button:hover {
+    background-color: peachpuff
+}

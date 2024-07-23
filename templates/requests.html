@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Request list</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <style>
+            body 
+            {
+                background-color: peachpuff;
+                font-size: 18px;
+                font-family: "Lato", sans-serif;
+            }
+            .dashboard-button {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background-color: rgb(251, 172, 103);
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border: none;
+                border-radius: 4px;
+            }
+            .dashboard-button:hover {
+                background-color: peachpuff
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Your bookings list</h1>
+            <p>Here are the list of booking requests in your account</p>
+  
+            <a href="{{ url_for('dashboard') }}" class="dashboard-button">Dashboard</a>
+            <table class="table table-bordered table-striped table-hover table-sm">
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Property</th>
+                    <th>Booking Status</th>
+                </tr>
+                {% for item in bookings_list %}
+                <tr>
+                    <td><a href='/booking_detail/{{item.booking_id}}'>{{item.booking_id}}</a></td>
+                    <td>{{item.start_date}}</td>
+                    <td>{{item.end_date}} </td>
+                    <td>{{item.property_name}} : {{item.property_description}}</td>
+                    <td>{{item.status}}</td>
+                {% endfor %}
+                </tr>    
+            </table>
+        </div>  
+    </body>
+</html>

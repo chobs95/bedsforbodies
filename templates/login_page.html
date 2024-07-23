@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MakersBnB - Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="utf-8">
+    <style>
+        body{
+            background-color: peachpuff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .link {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">    
+        <h1>please login</h1>
+        <p>enter your email and password</p>
+        <form action='login' method='POST'>
+            <input type='text' name='email' id='email' placeholder='email' value="charlie_roberts23@hotmail.co.uk"/>
+            <input type='password' name='password' id='password' placeholder='password' value="Password!23"/>
+            <input type='submit' name='submit'/>
+        </form>
+        <p> or create an account </p>
+        <a href="{{ url_for('get_create_account') }}">
+            <button>create account</button>
+    </div>
+</body>
+</html>
